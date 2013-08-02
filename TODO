@@ -1,0 +1,31 @@
+- Perf testing
+  - Fix R installation
+  - Build R scripts
+  - Profiling
+  - KeyGen may be the bottleneck, consider inlining key generation
+  - Instrumentation
+     - readable dump
+- Cleaning during recovery
+- Optimize clean shutdown
+- Close()
+  - Reject any GC attempts
+  - Check on all public operations
+  - Handle in-flight log segment references?
+- Log deletes
+- Break out recovery tests
+
+
+------------ Phase 2 ---------------
+
+- HugeTLB
+- Optimize CRC to use byte buffers directly
+- Add store name to logging
+- putIfAbsent()
+- Lossy storage
+- Refactor segment stats into HashStore
+- Extensible hashing
+- Investigate persisting index to disk?
+- Remove guava dependency
+- Consider optimizing rehash to bitshift?
+- Handle IOException
+- Hierarchical config

@@ -1,0 +1,47 @@
+Iterator
+- Need to always get the next valid record
+
+Extensible hashing
+
+Effect of data size on latency? Fixed throughput, vary data size.
+Flat perf versus data size?
+Effect of value size?
+Maximum write throughput, cleaner stress test
+Effect of a background scan (fixed throughput)
+
+Perf tests
+- Maximum throughput as a function of data size
+- 99.9th percentile with fixed throughput as a function of data size
+- Cleaner stress test (maximum throughput writes)
+- Cleaner impact
+- Background scans
+
+Variables:
+- SAS vs SSD
+- Data size 
+- Value size
+- Read/write mixture
+
+Die hard suite
+- Apply reads, writes from large, shuffled file, shutdown (cleanly or uncleanly), check contents
+
+Notes
+- No locking around I/O
+- 1 I/O per operation whp
+- Adaptive multi-store cleaner
+- Linear scan only for disk scans
+- No I/O on index resizing
+- Very low heap allocation
+- Single-threaded mode
+
+Notes
+- Large data performance
+
+Design
+- 
+Tests
+- 500M 1000 byte values 
+- Scan/gc rate: 200MB/sec
+- Cleaner stress test
+
+- Can do about 100k IOPs/second on viridant drive mmap in c
